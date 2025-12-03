@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luminéa Salon & Spa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0d1117;
+      --muted:#9aa4b2;
+      --accent:#f6e8ff; /* pale lavender */
+      --gold:#d9b97a;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#071028 0%, #081323 50%); color:#e8eef6; -webkit-font-smoothing:antialiased}
+    a{color:inherit; text-decoration:none}
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(6px); background:linear-gradient(180deg, rgba(6,10,20,0.6), rgba(6,10,20,0.3)); border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Nav */
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b185f,#9b59ff);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(99,66,255,0.12)}
+    .logo svg{filter:drop-shadow(0 6px 12px rgba(0,0,0,0.35))}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    .btn{background:linear-gradient(90deg,#8b5cf6,#6d28d9);padding:10px 16px;border-radius:12px;font-weight:600;color:white;border:none;cursor:pointer}
+    .ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:56px 0}
+    .hero-left h1{font-family:'Playfair Display',serif;font-size:44px;margin:0 0 12px;line-height:1.02;color:var(--accent)}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .features{display:flex;gap:12px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+
+    /* booking box */
+    .booking{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px}
+    .booking h3{margin:0 0 10px;font-family:'Playfair Display',serif}
+    .row{display:flex;gap:10px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    .flex{display:flex;gap:12px}
+
+    /* services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+    .service h4{margin:0 0 6px}
+    .price{color:var(--gold);font-weight:700}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:34px 0}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer}
+
+    /* about/team/contact */
+    .about{display:flex;gap:24px;align-items:center;padding:26px;background:var(--glass);border-radius:12px}
+    .team{display:flex;gap:14px}
+    .member{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;text-align:center}
+    .member img{width:88px;height:88px;border-radius:10px;object-fit:cover;margin-bottom:8px}
+
+    /* footer */
+    footer{padding:36px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 360px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:760px){
+      .hero{grid-template-columns:1fr;gap:18px}
+      nav ul{display:none}
+      .mobile-nav{display:block}
+      .services{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- subtle L monogram -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4h9.5a3.5 3.5 0 0 1 0 7H6v9" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-weight:600; font-size:18px">Luminéa Salon</div>
+          <div style="font-size:12px;color:var(--muted)">Unisex Salon • Spa • Wellness</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#services" class="muted">Services</a></li>
+          <li><a href="#gallery" class="muted">Gallery</a></li>
+          <li><a href="#team" class="muted">Our Team</a></li>
+          <li><a href="#contact" class="muted">Contact</a></li>
+          <li><button class="btn" id="bookNow">Book Now</button></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-nav">
+        <button class="ghost" id="menuToggle">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Luminéa — A boutique of beauty & serenity</h1>
+        <p class="muted">Premium unisex hair, skin and spa experiences crafted with botanical luxury. Calm interiors, professional stylists and tailored treatments designed to refresh and uplift.</p>
+
+        <div class="features">
+          <div class="card" style="min-width:220px">
+            <h3 style="margin:0 0 8px;font-family:'Playfair Display',serif">Signature Facial</h3>
+            <p class="muted" style="margin:0">Scientifically-backed clean ingredients, visible glow after first session.</p>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px;font-family:'Playfair Display',serif">Luxury Unisex Haircut & Style</h3>
+            <p class="muted" style="margin:0">Precision cutting, premium keratin & styling.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:24px">
+          <button class="btn" id="scrollServices">Explore Services</button>
+          <button class="ghost" style="margin-left:10px" id="openGallery">View Gallery</button>
+        </div>
+      </div>
+
+      <aside>
+        <div class="booking card booking">
+          <h3>Reserve your experience</h3>
+          <p class="muted">Select service, date & preferred artist. We'll confirm availability.</p>
+          <form id="bookingForm">
+            <div style="margin-top:10px">
+              <label for="service">Service</label>
+              <select id="service" required>
+                <option value="">Choose a service</option>
+                <option>Signature Facial — ₹2,999</option>
+                <option>Luxury Haircut & Style — ₹1,800</option>
+                <option>Swedish Massage — ₹2,200</option>
+                <option>Bridal Package — ₹9,000</option>
+              </select>
+            </div>
+            <div class="row" style="margin-top:10px">
+              <div style="flex:1">
+                <label for="date">Date</label>
+                <input type="date" id="date" required />
+              </div>
+              <div style="flex:1">
+                <label for="time">Time</label>
+                <input type="time" id="time" required />
+              </div>
+            </div>
+            <div style="margin-top:10px">
+              <label for="name">Full name</label>
+              <input id="name" placeholder="Your name" required />
+            </div>
+            <div style="margin-top:10px">
+              <label for="phone">Phone</label>
+              <input id="phone" placeholder="+91 9XXXXXXXX" required />
+            </div>
+            <div style="margin-top:12px;display:flex;gap:10px">
+              <button type="submit" class="btn">Request Booking</button>
+              <button type="button" class="ghost" id="clearForm">Clear</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2 style="font-family:'Playfair Display',serif">Our Signature Services</h2>
+      <p class="muted">Curated treatments for hair, skin and overall wellbeing.</p>
+      <div class="services">
+        <div class="card service">
+          <h4>Signature Facial <span class="price">₹2,999</span></h4>
+          <p class="muted">Deep cleanse, enzymatic exfoliation and brightening mask (60 mins).</p>
+        </div>
+        <div class="card service">
+          <h4>Luxury Haircut & Style <span class="price">₹1,800</span></h4>
+          <p class="muted">Consultation, precision unisex cut, blow-dry & finish (45 mins).</p>
+        </div>
+        <div class="card service">
+          <h4>Swedish Massage <span class="price">₹2,200</span></h4>
+          <p class="muted">Relaxing full-body massage using warm oils (60 mins).</p>
+        </div>
+        <div class="card service">
+          <h4>Bridal Package <span class="price">₹9,000</span></h4>
+          <p class="muted">Trial, pre-bridal facials and full day styling support.</p>
+        </div>
+        <div class="card service">
+          <h4>Anti-Age Therapy <span class="price">₹4,500</span></h4>
+          <p class="muted">Advanced serum infusion and microcurrent lift.</p>
+        </div>
+        <div class="card service">
+          <h4>Manicure & Pedicure <span class="price">₹1,200</span></h4>
+          <p class="muted">Luxury soak, scrub, massage and polish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 style="font-family:'Playfair Display',serif">Gallery</h2>
+      <p class="muted">A glimpse of our interiors and recent work.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&crop=faces&ixlib=rb-4.0.3&s=123" alt="salon interior 1">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&crop=faces&ixlib=rb-4.0.3&s=456" alt="salon interior 2">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=789" alt="treatment 1">
+        <img src="https://images.unsplash.com/photo-1556228720-1f0b5a94e3d6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=321" alt="treatment 2">
+      </div>
+    </section>
+
+    <section id="team" style="margin-top:20px">
+      <h2 style="font-family:'Playfair Display',serif">Our Unisex Experts</h2>
+      <p class="muted">Talented unisex stylists, therapists and beauty specialists.</p>
+      <div class="team" style="margin-top:14px">
+        <div class="member card" style="min-width:160px">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=222" alt="team member">
+          <strong>Priya Sharma</strong>
+          <div class="muted">Senior Stylist</div>
+        </div>
+        <div class="member card" style="min-width:160px">
+          <img src="https://images.unsplash.com/photo-1545996124-45c8a8f1b7f7?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=333" alt="team member">
+          <strong>Amit Verma</strong>
+          <div class="muted">Spa Therapist</div>
+        </div>
+        <div class="member card" style="min-width:160px">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=444" alt="team member">
+          <strong>Rhea Kapoor</strong>
+          <div class="muted">Skin Specialist</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:36px">
+      <div class="about">
+        <div style="flex:1">
+          <h3 style="margin:0;font-family:'Playfair Display',serif">Visit Luminéa</h3>
+          <p class="muted">123 Aura Lane, Hauz Khas, New Delhi</p>
+          <p class="muted">Mon - Sat: 10:00 AM - 8:00 PM • Sun: 10:00 AM - 6:00 PM</p>
+          <p class="muted">Phone: +91 98765 43210 • Email: hello@lumineasalon.com</p>
+        </div>
+        <div style="width:360px">
+          <form id="contactForm">
+            <label for="cname">Name</label>
+            <input id="cname" placeholder="Your name" required>
+            <label for="cphone" style="margin-top:8px">Phone</label>
+            <input id="cphone" placeholder="Phone or WhatsApp" required>
+            <label for="cmsg" style="margin-top:8px">Message</label>
+            <textarea id="cmsg" rows="3" placeholder="How can we help?" required></textarea>
+            <div style="margin-top:10px" class="center">
+              <button type="submit" class="btn">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:36px">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-weight:600">Luminéa Salon</div>
+          <div class="muted" style="font-size:13px">Beauty • Calm • Craft</div>
+        </div>
+        <div class="muted">© <span id="year"></span> Luminéa Salon. All rights reserved.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // small interactive behaviours
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // scroll to services
+    document.getElementById('scrollServices').addEventListener('click', function(){
+      document.getElementById('services').scrollIntoView({behavior:'smooth'});
+    });
+
+    // open gallery
+    document.getElementById('openGallery').addEventListener('click', function(){
+      document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
+    });
+
+    // booking form - simple validation + pretend submit
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      if(!name || !phone || !date || !time){
+        alert('Please fill all booking fields.');
+        return;
+      }
+      // simulate booking request
+      alert('Thanks ' + name + '! We received your booking request. Our team will call you at ' + phone + ' to confirm.');
+      bookingForm.reset();
+    });
+
+    document.getElementById('clearForm').addEventListener('click', function(){ bookingForm.reset(); });
+
+    // contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const cname = document.getElementById('cname').value.trim();
+      const cphone = document.getElementById('cphone').value.trim();
+      const cmsg = document.getElementById('cmsg').value.trim();
+      if(!cname || !cphone || !cmsg){ alert('Please fill all fields.'); return; }
+      alert('Message sent — we will reach out to ' + cphone + ' soon.');
+      document.getElementById('contactForm').reset();
+    });
+
+    // gallery lightbox
+    document.querySelectorAll('.gallery img').forEach(img=>{
+      img.addEventListener('click', ()=>{
+        const src = img.src;
+        const light = document.createElement('div');
+        light.style.position='fixed';light.style.inset=0;light.style.background='rgba(0,0,0,0.8)';light.style.display='flex';light.style.alignItems='center';light.style.justifyContent='center';light.style.zIndex=9999;
+        const im = document.createElement('img');im.src=src;im.style.maxWidth='90%';im.style.maxHeight='90%';im.style.borderRadius='8px';
+        light.appendChild(im);
+        light.addEventListener('click', ()=>document.body.removeChild(light));
+        document.body.appendChild(light);
+      })
+    });
+
+    // mobile menu toggle (very simple)
+    document.getElementById('menuToggle').addEventListener('click', function(){
+      const menu = document.querySelector('nav ul');
+      if(menu.style.display === 'flex') menu.style.display = 'none';
+      else menu.style.display = 'flex';
+    });
+
+    // Book Now button scroll
+    document.getElementById('bookNow').addEventListener('click', ()=>{
+      window.scrollTo({top:0,left:0,behavior:'smooth'});
+      // focus booking date
+      setTimeout(()=>document.getElementById('service').focus(),400);
+    });
+  </script>
+</body>
+</html>
